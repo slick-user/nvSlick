@@ -22,16 +22,17 @@ require("lazy").setup({
     import = "nvchad.plugins",
   },
 
+  -- the shit I added myself that might break my whole thing, | 2026 I removed the stuff I had here 
   { import = "plugins" },
 }, lazy_config)
+
+require "options"
+require "nvchad.autocmds"
+require "nvchad.mappings"
 
 -- load theme
 dofile(vim.g.base46_cache .. "defaults")
 dofile(vim.g.base46_cache .. "statusline")
-
-require "options"
-require "nvchad.autocmds"
-
 vim.schedule(function()
   require "mappings"
 end)

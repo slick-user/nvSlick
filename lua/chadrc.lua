@@ -5,12 +5,26 @@
 local M = {}
 
 M.base46 = {
-	theme = "onedark",
+	theme = "aquarium",
 
-	-- hl_override = {
-	-- 	Comment = { italic = true },
-	-- 	["@comment"] = { italic = true },
-	-- },
+	hl_override = {
+   
+    -- Comments
+    Comment = { italic = true },
+    ["@comment"] = { italic = true },
+  
+    -- Functions
+    ["@function"] = { bold = true },
+    ["@method"] = { bold = true },
+	},
+}
+
+M.ui = {
+  winbar = {
+    enabled = true,
+    show_file_path = true,
+    show_symbols = true,
+  },
 }
 
 return M

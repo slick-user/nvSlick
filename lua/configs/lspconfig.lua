@@ -1,24 +1,27 @@
 -- load defaults i.e lua_lsp
 require("nvchad.configs.lspconfig").defaults()
 
-local lspconfig = require "lspconfig"
-
--- EXAMPLE
-local servers = { "html", "cssls" }
 local nvlsp = require "nvchad.configs.lspconfig"
+local navic = require "nvim-navic"
 
--- lsps with default config
-for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
-    on_attach = nvlsp.on_attach,
-    on_init = nvlsp.on_init,
-    capabilities = nvlsp.capabilities,
-  }
+local function on_attach(client, bufnr)
+  nvlsp.on_attach(client, bufnr)
+
+  -- attach breadcrumbs
+  if client.server_capabilities.documentSymbolProvider then
+    navic.attach(client, bufnr)
+  end
 end
 
--- configuring single server, example: typescript
--- lspconfig.tsserver.setup {
---   on_attach = nvlsp.on_attach,
---   on_init = nvlsp.on_init,
---   capabilities = nvlsp.capabilities,
--- }
+local capabilities = nvlsp.capabilities
+
+local servers = { "cssls", "clangd", "ast_grep", "html", "ts_ls", "pyright", "gopls", "asm_lsp"}
+
+for _, server in ipairs(servers) do
+  vim.lsp.config(server, {
+    on_attach = on_attach,
+    on_init = nvlsp.on_init,
+    capabilities = capabilities,
+  })
+  vim.lsp.enable(server)
+end

@@ -1,9 +1,11 @@
-**This repo is supposed to used as config by NvChad users!**
+**Slick Users Config**
 
-- The main nvchad repo (NvChad/NvChad) is used as a plugin by this repo.
-- So you just import its modules , like `require "nvchad.options" , require "nvchad.mappings"`
-- So you can delete the .git from this repo ( when you clone it locally ) or fork it :)
+Slick User (Azlan Ali Khan's) configuration of nvchad. Not a lot was changed, a few plugins were added. Got my job done
+Used mainly to write C++, C, Python, Go and notetaking.
+I would recommend installing nvchad or whatever other new flavor is trending nowadays.
+
+PS
+I got rid of the ASM LSP and The AI integration was never done
 
 # Credits
-
 1) Lazyvim starter https://github.com/LazyVim/starter as nvchad's starter was inspired by Lazyvim's . It made a lot of things easier!
