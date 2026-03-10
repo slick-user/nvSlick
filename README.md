@@ -9,3 +9,5 @@ I got rid of the ASM LSP and The AI integration was never done
 
 # Credits
 1) Lazyvim starter https://github.com/LazyVim/starter as nvchad's starter was inspired by Lazyvim's . It made a lot of things easier!
+
+<img width="1600" height="849" alt="nvchad" src="https://github.com/user-attachments/assets/b91fbe66-b392-448a-b025-01e3e9cd1154" />
